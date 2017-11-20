@@ -14,8 +14,6 @@
 #ifndef COMMONS_CHECKMATRIX_H
 #define COMMONS_CHECKMATRIX_H
 
-#include <gismo.h>
-
 namespace UnitTest {
   
 /**

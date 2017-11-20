@@ -14,11 +14,11 @@
 #ifndef COMMON_CHECKSMACROS_H
 #define COMMON_CHECKSMACROS_H
 
-#include "../UnitTest++/Config.h"
-#include "../UnitTest++/TestResults.h"
-#include "../UnitTest++/MemoryOutStream.h"
-#include "CheckMatrix.h"
-#include "CheckFiles.h"
+#include "Config.h"
+#include "TestResults.h"
+#include "MemoryOutStream.h"
+#include "gs/CheckMatrix.h"
+#include "gs/CheckFiles.h"
 
 namespace UnitTest {
 

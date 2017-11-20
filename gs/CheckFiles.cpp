@@ -17,8 +17,8 @@
 #include <fstream>
 #include <vector>
 
-#include "CheckFiles.h"
-#include "../UnitTest++/MemoryOutStream.h"
+#include "gs/CheckFiles.h"
+#include "MemoryOutStream.h"
 
 namespace UnitTest {
 

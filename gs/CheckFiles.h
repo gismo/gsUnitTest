@@ -16,7 +16,7 @@
 
 #include <string>
 
-#include "../UnitTest++/TestResults.h"
+#include "TestResults.h"
 
 namespace UnitTest {
 
