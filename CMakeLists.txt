@@ -23,8 +23,8 @@ file(GLOB headers_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h)
 file(GLOB sources_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
 
 # get the gismo related sources
-file(GLOB gsheaders_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/gs *.h)
-file(GLOB gssources_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/gs *.cpp)
+file(GLOB gsheaders_ ${CMAKE_CURRENT_SOURCE_DIR}/gs *.h)
+file(GLOB gssources_ ${CMAKE_CURRENT_SOURCE_DIR}/gs *.cpp)
 
 # get platform specific sources
 if (WIN32)
