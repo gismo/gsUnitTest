@@ -22,6 +22,10 @@ option(UTPP_USE_PLUS_SIGN "Set this to OFF is you with to use '-cpp' instead of 
 file(GLOB headers_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h)
 file(GLOB sources_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
 
+# get the gismo related sources
+file(GLOB gsheaders_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/gs *.h)
+file(GLOB gssources_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}/gs *.cpp)
+
 # get platform specific sources
 if (WIN32)
     add_definitions(-D_CRT_SECURE_NO_DEPRECATE)
@@ -36,8 +40,8 @@ file(GLOB platformSources_ RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} ${platformDir_}/
 #source_group(${platformDir_} FILES ${platformHeaders_} ${platformSources_})
 
 # create the lib
-#add_library(UnitTestPP SHARED ${headers_} ${sources_} ${platformHeaders_} ${platformSources_})
-add_library(UnitTestPP STATIC ${headers_} ${sources_} ${platformHeaders_} ${platformSources_})
+#add_library(UnitTestPP SHARED ${headers_} ${sources_} ${gsheaders_} ${gssources_} ${platformHeaders_} ${platformSources_})
+add_library(UnitTestPP STATIC ${headers_} ${sources_} ${gsheaders_} ${gssources_} ${platformHeaders_} ${platformSources_})
 
 # add install targets
 if(${UTPP_USE_PLUS_SIGN})
