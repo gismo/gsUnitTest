@@ -54,6 +54,7 @@ endif()
 
 install(TARGETS UnitTestPP DESTINATION lib)
 install(FILES ${headers_} DESTINATION ${UTPP_INSTALL_DESTINATION})
+install(FILES ${gsheaders_} DESTINATION ${UTPP_INSTALL_DESTINATION}/gs)
 install(FILES ${platformHeaders_} DESTINATION ${UTPP_INSTALL_DESTINATION}/${platformDir_})
 
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib)
