@@ -20,9 +20,9 @@ namespace UnitTest {
  * check that a matrix 'actual' is equal to an 'expected' matrix
  * (or at least close, with respect to the 'tolerance' value)
  */
-template< typename T >
-void CheckMatrixClose(TestResults& results, gismo::gsMatrix<T> const& expected, gismo::gsMatrix<T> const& actual,
-                      T const& tolerance, TestDetails const& details)
+template< class Derived >
+void CheckMatrixClose(TestResults& results, Eigen::MatrixBase<Derived> const& expected, Eigen::MatrixBase<Derived> const& actual,
+                      typename Eigen::MatrixBase<Derived>::Scalar const& tolerance, TestDetails const& details)
 {
  bool equal = true;
   const index_t rows = actual.rows();
