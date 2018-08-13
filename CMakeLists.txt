@@ -2,16 +2,17 @@
 cmake_minimum_required(VERSION 2.8.8)
 
 if(POLICY CMP0048)# CMake 3.0
-cmake_policy(SET CMP0011 NEW)
-cmake_policy(SET CMP0048 OLD)
+  cmake_policy(SET CMP0011 NEW)
+  cmake_policy(SET CMP0042 NEW)
+  cmake_policy(SET CMP0048 NEW)
 endif()
 
 if(POLICY CMP0054)# CMake 3.1
-cmake_policy(SET CMP0054 OLD)
+  cmake_policy(SET CMP0054 NEW)
 endif()
 
 if(POLICY CMP0063)# CMake 3.3
-cmake_policy(SET CMP0063 NEW)
+  cmake_policy(SET CMP0063 NEW)
 endif()
 
 project(UnitTest++)
