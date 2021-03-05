@@ -21,8 +21,8 @@ namespace UnitTest {
  * (or at least close, with respect to the 'tolerance' value)
  */
 template< class Derived >
-void CheckMatrixClose(TestResults& results, Eigen::MatrixBase<Derived> const& expected, Eigen::MatrixBase<Derived> const& actual,
-                      typename Eigen::MatrixBase<Derived>::Scalar const& tolerance, TestDetails const& details)
+void CheckMatrixClose(TestResults& results, gsEigen::MatrixBase<Derived> const& expected, gsEigen::MatrixBase<Derived> const& actual,
+                      typename gsEigen::MatrixBase<Derived>::Scalar const& tolerance, TestDetails const& details)
 {
  bool equal = true;
   const index_t rows = actual.rows();
