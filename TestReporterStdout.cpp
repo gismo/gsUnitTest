@@ -8,6 +8,10 @@
 	namespace std {}
 #endif
 
+#include <set>
+#include <string>
+std::set<std::string> failed_tests;
+
 namespace UnitTest {
 
 void TestReporterStdout::ReportFailure(TestDetails const& details, char const* failure)
@@ -20,6 +24,7 @@ void TestReporterStdout::ReportFailure(TestDetails const& details, char const* f
     char const* const errorFormat = "%s(%d): error: Failure in %s: %s\n";
     fprintf(stderr, errorFormat, details.filename, details.lineNumber, details.testName, failure);
 #endif
+    failed_tests.insert( details.testName );
 }
 
 void TestReporterStdout::ReportTestStart(TestDetails const& test)
@@ -36,13 +41,16 @@ void TestReporterStdout::ReportSummary(int const totalTestCount, int const faile
                                        int const failureCount, float const secondsElapsed)
 {
 	using namespace std;
+    printf("Total test time: %.2f seconds.\n", secondsElapsed);
 
     if (failureCount > 0)
-        printf("FAILURE: %d out of %d tests failed (%d failures).\n", failedTestCount, totalTestCount, failureCount);
+    {
+        printf("FAILURE: %d out of %d tests failed (%d failures):\n", failedTestCount, totalTestCount, failureCount);
+        for (auto & tname : failed_tests)
+            printf("- %s\n", tname.c_str());
+    }
     else
         printf("Success: %d tests passed.\n", totalTestCount);
-
-    printf("Total test time: %.2f seconds.\n", secondsElapsed);
 }
 
 }
